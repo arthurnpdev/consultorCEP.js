@@ -1,3 +1,6 @@
+let input = document.getElementById("cep");
+let btn = document.getElementById("btn-busca");
+
 function buscarCEP() {
     let input = document.getElementById('cep').value.trim();
 
@@ -21,4 +24,12 @@ function buscarCEP() {
     } else {
         document.querySelector('.informacoes').style.display = 'none';
     }
+ 
 }
+
+input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        btn.click();
+    }
+});
